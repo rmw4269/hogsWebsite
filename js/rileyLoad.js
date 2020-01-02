@@ -61,7 +61,7 @@ const memberData = {
 			"name": "Stephanie Mulligan",
 			"eboardRole": "Secretary",
 			"major": "Chemistry",
-			"minor": "Psychology"
+			"minor": "Psychology",
 			"enrollment": "First Year",
 			"photos": [
 				{
