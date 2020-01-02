@@ -114,15 +114,15 @@ const memberData = {
 			"enrollment": "Third Year",
 			"photos": [
 				{
-					"URL": "images/portfolio/sofie_christie.jpg",
+					"URL": "images/portfolio/rowan_christie.jpg",
 					"size": "thumbnail"
 				},
 				{
-					"URL": "images/portfolio/modals/m_sofie_christie.jpg",
+					"URL": "images/portfolio/modals/m_rowan_christie.jpg",
 					"size": "full"
 				}
 			],
-			"bio": "Yo, this is Sof. I’m a 3^rd^ year bioinformatics major and I currently do interdisciplinary research on macroinvertebrates with computational tools. I’m also passionate about project outreach, and I’ve helped HoGS get involved in school outreach events when I was project manager for HoGS. My other interests include biking, hiking, drawing, coding, and improv. Hope to see you on floor - we can be kinda eccentric and weird, but it’s what I love about this floor."
+			"bio": "Yo, this is Rowan. I’m a 3^rd^ year bioinformatics major and I currently do interdisciplinary research on macroinvertebrates with computational tools. I’m also passionate about project outreach, and I’ve helped HoGS get involved in school outreach events when I was project manager for HoGS. My other interests include biking, hiking, drawing, coding, and improv. Hope to see you on floor - we can be kinda eccentric and weird, but it’s what I love about this floor."
 		},
 		{
 			"name": "Alexandra Capodicasa",
