@@ -17,7 +17,7 @@ const memberData = {
 					"size": "thumbnail"
 				},
 				{
-					"URL": "images/team/makenna_fun.jpg",
+					"URL": "images/team/makenna_x_fun.jpg",
 					"size": "fun"
 				}
 			],
