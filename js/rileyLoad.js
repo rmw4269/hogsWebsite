@@ -7,10 +7,10 @@ const memberData = {
 	],
 	"members": [
 		{
-			"name": "Abby Lupi",
+			"name": "Makenna",
 			"eboardRole": "President",
-			"major": "Physics",
-			"enrollment": "Second Year",
+			"major": "Packaging Science",
+			"enrollment": "Third Year",
 			"photos": [
 				{
 					"URL": "images/team/abby_lupi.jpg",
@@ -21,12 +21,12 @@ const memberData = {
 					"size": "fun"
 				}
 			],
-			"bio": "Hello and welcome to the House of General Science! I am a second year physics major with an unhealthy enthusiasm for anything space or particle physics-related. You'll catch me playing Age of Mythology or Magic on the weekends. Fun fact: my first tattoo was a Mobius strip."
+			"bio": "Hello!  I am a third year Packaging Science major (yes, we exist) from Columbus, Ohio.  I enjoy watching hockey (go Jackets) and attending concerts.  This may sound cliché but joining the House of General Science is one of the best decisions I have made.  I have made so many new friends here as well as gained confidence in myself.  Feel free to reach out if you have any questions about the floor.  I hope to see you around!"
 		},
 		{
-			"name": "Nick Kugler",
+			"name": "Skyler MacDougall",
 			"eboardRole": "Vice President",
-			"major": "Civil Engineering Technology",
+			"major": "Electrical Engineering Technology",
 			"enrollment": "Second Year",
 			"photos": [
 				{
@@ -38,7 +38,7 @@ const memberData = {
 					"size": "fun"
 				}
 			],
-			"bio": "Hi!!! I’m Civil Engineering Technology Major from Brooklyn, New York (I’m the only non-physics major on E-Board and I’m scared). I’m super weird and dorky and bad at grammar and bad at knowing when to stop talking and weird and dorky and bad with technology and I like Sci-Fi and I’m VERY into buildings. I spend my time listening to (edgy) music or sitting like an (edgy) pretzel, sometimes both - that’s a fun time. Oh, Oh no … the physics majors are back, STOP!, zz/z/zz STAY, STAY BACK!!! zz/chzz//zch"
+			"bio": "Hello, I\'m Skyler MacDougall, and I\'m from Corning, New York. If you dont recognize that place, thats because its basically in the middle of the wilderness on the NY-PA border. When I\'m not doing homework or going to classes, you can find me in my room or in the social lounge, most likely playing video games or just hanging out. In addition to that, my other hobbies include trying to \"fix\" my computer and watching football (go Eagles)."
 		},
 		{
 			"name": "Remi Schneider",
@@ -58,10 +58,10 @@ const memberData = {
 			"bio": "Greetings!! I’m Remi, the current HoGS Treasurer, I’m a first year physics student, and I have an undying love for space, pizza, cats, and mac and cheese. I’m from a small town in central New York called Valatie, where we have very interesting things like fields, waterfalls, fields, tractors, and fields. I enjoy long walks on the beach, piña coladas, and getting caught in the rain."
 		},
 		{
-			"name": "Clare Scroger",
+			"name": "Stephanie Mulligan",
 			"eboardRole": "Secretary",
-			"major": "Physics",
-			"enrollment": "Second Year",
+			"major": "Chemistry",
+			"enrollment": "First Year",
 			"photos": [
 				{
 					"URL": "images/team/clare_scroger.jpg",
@@ -72,7 +72,7 @@ const memberData = {
 					"size": "fun"
 				}
 			],
-			"bio": "Hi everybody! I'm a first year physics major from Akron, NY. I'm so glad to have joined HoGS this year! The people here are great and the community is amazing for both on and off floor members. You will probably see me somewhere on the floor with a book as I love to read. Even if I'm reading though, you'll still find me out and about socializing too. I like helping people and will give a hand whenever it's needed. This floor has become my second home and I hope it will become yours too! See you on floor!"
+			"bio": "Hello everyone! I’m Stephanie, the current HoGS secretary and a chemistry major/psych minor from Youngstown, Ohio. RIT has made me discover my love of swing dancing and this house. I love spending time on the floor with everyone and I’ve met some of my best friends thanks to the house! I highly recommend HoGS to everyone."
 		},
 		{
 			"name": "Patrick Salts",
