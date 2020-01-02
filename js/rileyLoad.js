@@ -224,22 +224,6 @@ const memberData = {
 			"bio": "Hi I’m Brad! I’m a game design and development major who likes baseball, math, and fancy cheeses. I used to be the vice president of HoGS, and now I’m on e-board of the comedy club Fowl Play."
 		},
 		{
-			"name": "Patric Salts",
-			"major": "Computer Science",
-			"enrollment": "Third Year",
-			"photos": [
-				{
-					"URL": "images/portfolio/patrick_salts.jpg",
-					"size": "thumbnail"
-				},
-				{
-					"URL": "images/portfolio/modals/m_patrick_salts.jpg",
-					"size": "full"
-				}
-			],
-			"bio": "Hi! I'm a third year CS major whomst's hair has grown entirely too long, and whomst's hobbies backlog has grown entirely too long. I would like to declare a Japanese minor as soon as I get into a fifth course to make it such. I would love to chat about weeb things and/or books and/or video games!"
-		},
-		{
 			"name": "Will Ebmeyer",
 			"major": "Chemistry",
 			"enrollment": "First Year",
@@ -385,7 +369,7 @@ processEboard: {
 		} else if (memberData.eboardSort.includes(b.eboardRole)) {
 			return +1;
 		} else {
-			return a.localeCompare(b);
+			return a.name.localeCompare(b.name);
 		}
 	});
 
@@ -405,7 +389,7 @@ processEboard: {
 		new Elmen("p").withClasses("exedesc").withChildren(member.bio)
 	).done())
 
-	eboardMarkup = [];
+	let eboardMarkup = [];
 	while (eboard.length > 0) {
 		if (eboard.length >= 2) {
 			eboardMarkup.push(new Elmen("div").withClasses("row").withChildren(eboard.shift(), eboard.shift()).done());
@@ -419,5 +403,92 @@ processEboard: {
 		if (eboardSection) {
 			eboardMarkup.forEach(row => eboardSection.appendChild(row));
 		}
+	}, {passive: true, once: true, capture: false});
+}
+
+processMembers: {
+	members = memberData.members.filter(member => !member.eboardRole);
+	members.sort((a, b) => {
+		let comparison = (a.name ? a.name : "").localeCompare(b.name ? b.name : "");
+		if (comparison == 0) {
+			comparison = (a.major ? a.major : "").localeCompare(b.major ? b.major : "");
+		}
+		if (comparison == 0) {
+			comparison = (a.minor ? a.minor : "").localeCompare(b.minor ? b.minor : "");
+		}
+		if (comparison == 0) {
+			comparison = (a.enrollment ? a.enrollment : "").localeCompare(b.enrollment ? b.enrollment : "");
+		}
+		return comparison;
+	});
+	{
+		let id = 0;
+		members.forEach(member => member.id = id++);
+	}
+
+	gridItems = members.map(member =>
+		new Elmen("div").withClasses("bgrid", "folio-item").withChildren(
+			new Elmen("div").withClasses("item-wrap").withChildren(
+				new Elmen("a").withAttributes({href: `#modal-${member.id}`}).withChildren(
+					new Elmen("img").withAttributes({src: member.photos.find(photo => photo.size == "thumbnail").URL, alt: (member.name ? member.name : "")}),
+					new Elmen("div").withClasses("overlay").withChildren(
+						new Elmen("div").withClasses("portfolio-item-meta").withChildren(
+							new Elmen("h5").withChildren(member.name),
+							...([member.major, (member.minor ? member.minor : undefined), member.enrollment].map(infoLine =>
+								(infoLine === undefined) ? undefined : new Elmen("p").withChildren(infoLine)
+							))
+						)
+					),
+					new Elmen("div").withClasses("link-icon").withChildren(
+						new Elmen("i").withClasses("fa", "fa-plus")
+					)
+				)
+			)
+		)
+	);
+
+	modals = members.map(member =>
+		new Elmen("div").withClasses("popup-modal", "mfp-hide").withAttributes({id: `modal-${member.id}`}).withChildren(
+			new Elmen("div").withClasses("media").withChildren(
+				new Elmen("img").withAttributes({src: member.photos.find(photo => photo.size == "full").URL, alt: (member.name ? member.name : "")})
+			),
+			new Elmen("div").withClasses("description-box").withChildren(
+				new Elmen("h4").withChildren(member.name),
+				new Elmen("p").withChildren(member.bio)
+			),
+			new Elmen("div").withClasses("link-box").withChildren(
+				new Elmen("a").withClasses("popup-modal-dismiss").withAttributes({href: "#"}).withChildren("Close")
+			)
+		)
+	);
+
+	document.addEventListener("DOMContentLoaded", () => {
+		let portfolioSection = document.getElementById("portfolio");
+		if (portfolioSection) {
+			portfolioSection.appendChild(
+				new Elmen("div").withClasses("row", "items").withChildren(
+					new Elmen("div").withClasses("bgrid-fourth", "s-bgrid-third", "tab-bgrid-half").withAttributes({id: "portfolio-wrapper"}).withChildren(
+						...gridItems
+					),
+					...modals
+				).done()
+			);
+		}
+
+		// from main.js:
+		$('.item-wrap a').magnificPopup({
+
+			 type:'inline',
+			 fixedContentPos: false,
+			 removalDelay: 300,
+			 showCloseBtn: false,
+			 mainClass: 'mfp-fade'
+
+		});
+
+		$(document).on('click', '.popup-modal-dismiss', function (e) {
+				e.preventDefault();
+				$.magnificPopup.close();
+		});
 	}, {passive: true, once: true, capture: false});
 }
