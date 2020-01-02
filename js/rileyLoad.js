@@ -13,11 +13,11 @@ const memberData = {
 			"enrollment": "Third Year",
 			"photos": [
 				{
-					"URL": "images/team/abby_lupi.jpg",
+					"URL": "images/team/makenna_x.jpg",
 					"size": "thumbnail"
 				},
 				{
-					"URL": "images/team/abby_lupi_fun.jpg",
+					"URL": "images/team/makenna_fun.jpg",
 					"size": "fun"
 				}
 			],
@@ -64,11 +64,11 @@ const memberData = {
 			"enrollment": "First Year",
 			"photos": [
 				{
-					"URL": "images/team/clare_scroger.jpg",
+					"URL": "images/team/stephanie_mulligan.jpg",
 					"size": "thumbnail"
 				},
 				{
-					"URL": "images/team/clare_scroger_fun.jpg",
+					"URL": "images/team/stephanie_mulligan_fun.jpg",
 					"size": "fun"
 				}
 			],
