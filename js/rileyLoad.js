@@ -213,15 +213,15 @@ const memberData = {
 			"enrollment": "Fourth Year",
 			"photos": [
 				{
-					"URL": "images/portfolio/brad_hanel.jpg",
+					"URL": "images/portfolio/jake_rivas.jpg",
 					"size": "thumbnail"
 				},
 				{
-					"URL": "images/portfolio/modals/m_brad_hanel.jpg",
+					"URL": "images/portfolio/modals/m_jake_rivas.jpg",
 					"size": "full"
 				}
 			],
-			"bio": "Hi I’m Brad! I’m a game design and development major who likes baseball, math, and fancy cheeses. I used to be the vice president of HoGS, and now I’m on e-board of the comedy club Fowl Play."
+			"bio": "\"If life is going to exist in a Universe of this size, then the one thing it cannot afford to have is a sense of proportion.\" - Hitchikers Guide. "
 		},
 		{
 			"name": "Will Ebmeyer",
