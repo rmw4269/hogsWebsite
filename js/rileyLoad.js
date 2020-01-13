@@ -28,17 +28,17 @@ const memberData = {
 			"eboardRole": "Vice President",
 			"major": "Electrical Engineering Technology",
 			"enrollment": "Second Year",
-			"photos": [
-				{
-					"URL": "images/team/nick_kugler_fun.jpg",
-					"size": "thumbnail"
-				},
-				{
-					"URL": "images/team/nick_kugler.jpg",
-					"size": "fun"
-				}
-			],
-			"bio": "Hello, I\'m Skyler MacDougall, and I\'m from Corning, New York. If you dont recognize that place, thats because its basically in the middle of the wilderness on the NY-PA border. When I\'m not doing homework or going to classes, you can find me in my room or in the social lounge, most likely playing video games or just hanging out. In addition to that, my other hobbies include trying to \"fix\" my computer and watching football (go Eagles)."
+			//"photos": [
+				//{
+					//"URL": "images/team/nick_kugler_fun.jpg",
+					//"size": "thumbnail"
+				//},
+				//{
+					//"URL": "images/team/nick_kugler.jpg",
+					//"size": "fun"
+				//}
+			//],
+			,"bio": "Hello, I\'m Skyler MacDougall, and I\'m from Corning, New York. If you dont recognize that place, thats because its basically in the middle of the wilderness on the NY-PA border. When I\'m not doing homework or going to classes, you can find me in my room or in the social lounge, most likely playing video games or just hanging out. In addition to that, my other hobbies include trying to \"fix\" my computer and watching football (go Eagles)."
 		},
 		{
 			"name": "Remi Schneider",
