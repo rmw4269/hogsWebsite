@@ -28,17 +28,17 @@ const memberData = {
 			"eboardRole": "Vice President",
 			"major": "Electrical Engineering Technology",
 			"enrollment": "Second Year",
-			//"photos": [
-				//{
-					//"URL": "images/team/nick_kugler_fun.jpg",
-					//"size": "thumbnail"
-				//},
-				//{
-					//"URL": "images/team/nick_kugler.jpg",
-					//"size": "fun"
-				//}
-			//],
-			,"bio": "Hello, I\'m Skyler MacDougall, and I\'m from Corning, New York. If you dont recognize that place, thats because its basically in the middle of the wilderness on the NY-PA border. When I\'m not doing homework or going to classes, you can find me in my room or in the social lounge, most likely playing video games or just hanging out. In addition to that, my other hobbies include trying to \"fix\" my computer and watching football (go Eagles)."
+			"photos": [
+				{
+					"URL": "images/team/skyler_macdougall.jpg",
+					"size": "thumbnail"
+				},
+				{
+					"URL": "images/team/skyler_macdougall_fun.jpg",
+					"size": "fun"
+				}
+			],
+			"bio": "Hello, I\'m Skyler MacDougall, and I\'m from Corning, New York. If you dont recognize that place, thats because its basically in the middle of the wilderness on the NY-PA border. When I\'m not doing homework or going to classes, you can find me in my room or in the social lounge, most likely playing video games or just hanging out. In addition to that, my other hobbies include trying to \"fix\" my computer and watching football (go Eagles)."
 		},
 		{
 			"name": "Remi Schneider",
@@ -357,6 +357,20 @@ const memberData = {
 	]
 }
 
+let imageFailListener = {
+	type: "error",
+	once: true,
+	passive: true,
+	capture: false,
+	listener: (event) => {
+		if (event.target instanceof HTMLImageElement) {
+			event.target.setAttribute("src", "images/unknownProfile.svg");
+		} else {
+			throw "imageFail called on something other than an image";
+		}
+	}
+};
+
 processEboard: {
 	eboard = memberData.members.filter(member => member.eboardRole);
 	eboard.sort((a, b) => {
@@ -376,8 +390,8 @@ processEboard: {
 	eboard = eboard.map(member => new Elmen("div").withClasses("col-md-6").withChildren(
 		new Elmen("ul").withClasses("exemenu").withChildren(
 			new Elmen("li").withChildren(new Elmen("div").withClasses("exewrap").withChildren(
-				new Elmen("img").withClasses("img1").withAttributes({src: member.photos.find(photo => photo.size == "thumbnail").URL}),
-				new Elmen("img").withClasses("img2").withAttributes({src: member.photos.find(photo => photo.size == "fun").URL})
+				new Elmen("img").withClasses("img1").withAttributes({src: member.photos.find(photo => photo.size == "thumbnail").URL}).withListeners(imageFailListener),
+				new Elmen("img").withClasses("img2").withAttributes({src: member.photos.find(photo => photo.size == "fun").URL}).withListeners(imageFailListener)
 			)),
 			new Elmen("li").withClasses("exetext").withChildren(
 				new Elmen("h3").withChildren(member.name),
@@ -430,7 +444,7 @@ processMembers: {
 		new Elmen("div").withClasses("bgrid", "folio-item").withChildren(
 			new Elmen("div").withClasses("item-wrap").withChildren(
 				new Elmen("a").withAttributes({href: `#modal-${member.id}`}).withChildren(
-					new Elmen("img").withAttributes({src: member.photos.find(photo => photo.size == "thumbnail").URL, alt: (member.name ? member.name : "")}),
+					new Elmen("img").withAttributes({src: member.photos.find(photo => photo.size == "thumbnail").URL, alt: (member.name ? member.name : "")}).withListeners(imageFailListener),
 					new Elmen("div").withClasses("overlay").withChildren(
 						new Elmen("div").withClasses("portfolio-item-meta").withChildren(
 							new Elmen("h5").withChildren(member.name),
@@ -450,7 +464,7 @@ processMembers: {
 	modals = members.map(member =>
 		new Elmen("div").withClasses("popup-modal", "mfp-hide").withAttributes({id: `modal-${member.id}`}).withChildren(
 			new Elmen("div").withClasses("media").withChildren(
-				new Elmen("img").withAttributes({src: member.photos.find(photo => photo.size == "full").URL, alt: (member.name ? member.name : "")})
+				new Elmen("img").withAttributes({src: member.photos.find(photo => photo.size == "full").URL, alt: (member.name ? member.name : "")}).withListeners(imageFailListener)
 			),
 			new Elmen("div").withClasses("description-box").withChildren(
 				new Elmen("h4").withChildren(member.name),
